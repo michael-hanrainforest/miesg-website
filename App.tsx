@@ -18,32 +18,17 @@ import {
 } from 'lucide-react';
 import { PILLARS, TEAM_MEMBERS, RESOURCES, ECOSYSTEM_PARTNERS } from './constants';
 
-const Logo: React.FC<{ className?: string, light?: boolean }> = ({ className = "h-12", light = false }) => {
-  const [error, setError] = useState(false);
-
+const Logo: React.FC<{ className?: string }> = ({ className = "h-12" }) => {
   return (
-    <div className={`flex items-center justify-center transition-all duration-500 ${className}`}>
-      {!error ? (
-        <img 
-          src="logo.svg" 
-          alt="MiESG Logo" 
-          className="h-full w-auto object-contain max-h-full"
-          onError={() => {
-            console.warn("logo.svg not found, showing typographic fallback.");
-            setError(true);
-          }}
-        />
-      ) : (
-        <div className="flex flex-col justify-center -space-y-1 select-none">
-          <span className={`text-xl md:text-2xl font-black tracking-tighter leading-none ${light ? 'text-white' : 'text-[#1a2e28]'}`}>
-            Mi<span className="text-green-600">ESG</span>
-          </span>
-          <span className={`text-[7px] font-black uppercase tracking-[0.2em] leading-none ${light ? 'text-white/60' : 'text-slate-400'}`}>
-            Malaysia Institute
-          </span>
-        </div>
-      )}
-    </div>
+    <img 
+      src="logo.svg" 
+      alt="MiESG Logo" 
+      className={`object-contain block ${className}`}
+      onError={(e) => {
+        console.error("logo.svg failed to load. Please ensure it is in the root directory.");
+        (e.target as HTMLImageElement).style.opacity = '0';
+      }}
+    />
   );
 };
 
@@ -91,9 +76,7 @@ const App: React.FC = () => {
       <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center">
-            <div className={`transition-all duration-500 rounded-xl flex items-center justify-center ${!isScrolled ? 'bg-white/95 shadow-xl px-4 py-2' : 'bg-transparent'}`}>
-              <Logo className="h-10 md:h-14" />
-            </div>
+            <Logo className="h-10 md:h-16" />
           </a>
 
           <nav className="hidden lg:flex items-center gap-8">
@@ -166,18 +149,21 @@ const App: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-[#1a2e28]/40 via-transparent to-[#1a2e28]/60"></div>
           </div>
           <div className="container mx-auto px-6 z-10 text-center">
-            <div className="max-w-4xl mx-auto space-y-10">
+            <div className="max-w-4xl mx-auto flex flex-col items-center space-y-12">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2.5 text-white text-xs md:text-sm font-black uppercase tracking-[0.2em]">
                 <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
                 National ESG Centre of Excellence
               </div>
-              <h1 className="text-white text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] drop-shadow-2xl">
-                ESG <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-emerald-400">Leadership.</span>
-              </h1>
+              
+              {/* Main Headline Brand Logo */}
+              <div className="w-full flex justify-center transform hover:scale-[1.02] transition-transform duration-700">
+                <Logo className="h-32 md:h-48 lg:h-64 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-white/5 backdrop-blur-sm p-8 rounded-[3rem] border border-white/10" />
+              </div>
+
               <p className="text-white/80 text-lg md:text-2xl font-medium tracking-wide max-w-2xl mx-auto leading-relaxed px-4">
                 Advancing Malaysia’s sustainability transition through rigorous research, professional certification, and strategic policy.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-6 pt-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-6 pt-6 w-full sm:w-auto">
                 <a href="#about" onClick={(e) => scrollToSection(e, '#about')} className="w-full sm:w-auto bg-white text-[#1a2e28] px-12 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:bg-green-50 transition-all shadow-2xl flex items-center justify-center gap-2 group transform hover:-translate-y-1">
                   Our Mission <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </a>

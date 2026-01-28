@@ -19,21 +19,11 @@ import {
 import { PILLARS, TEAM_MEMBERS, RESOURCES, ECOSYSTEM_PARTNERS } from './constants';
 
 const Logo: React.FC<{ className?: string }> = ({ className = "h-14" }) => (
-  <svg 
-    viewBox="0 0 1000 300" 
-    xmlns="http://www.w3.org/2000/svg" 
-    className={className}
-  >
-    {/* Leaf Icon */}
-    <path d="M110,270 C10,240 10,80 230,20 C250,50 250,210 110,270 Z" fill="#4CAF50" />
-    <path d="M235,140 C240,180 230,280 100,290 C180,280 240,240 235,140 Z" fill="#1976D2" />
-    <path d="M125,260 C180,220 230,120 230,40" stroke="#000" strokeWidth="6" fill="none" />
-    
-    {/* Text "MiESG" */}
-    <text x="280" y="200" fontFamily="Inter, sans-serif" fontWeight="900" fontSize="200" fill="#222">MiESG</text>
-    {/* Subtitle */}
-    <text x="285" y="260" fontFamily="Inter, sans-serif" fontWeight="400" fontSize="56" fill="#444">Malaysia Institute of ESG</text>
-  </svg>
+  <img 
+    src="logo.png" 
+    alt="MiESG Logo" 
+    className={`${className} object-contain`} 
+  />
 );
 
 const App: React.FC = () => {

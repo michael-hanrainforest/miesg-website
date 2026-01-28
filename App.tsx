@@ -18,14 +18,29 @@ import {
 } from 'lucide-react';
 import { PILLARS, TEAM_MEMBERS, RESOURCES, ECOSYSTEM_PARTNERS } from './constants';
 
-const Logo: React.FC<{ className?: string }> = ({ className = "h-14" }) => (
-  <img 
-    src="logo.png" 
-    alt="MiESG Logo" 
-    className={`${className} object-contain block w-auto`} 
-    style={{ maxWidth: '280px' }}
-  />
-);
+const Logo: React.FC<{ className?: string }> = ({ className = "h-14" }) => {
+  return (
+    <img 
+      src="./logo.png" 
+      alt="MiESG Logo" 
+      className={`${className} object-contain block w-auto h-full`} 
+      style={{ minWidth: '120px', maxWidth: '280px' }}
+      loading="eager"
+      onError={(e) => {
+        console.error("MiESG Logo failed to load. Please verify 'logo.png' exists in the root directory.");
+        // Optional: show text fallback if image fails
+        e.currentTarget.style.display = 'none';
+        const parent = e.currentTarget.parentElement;
+        if (parent && !parent.querySelector('.logo-fallback')) {
+          const fallback = document.createElement('span');
+          fallback.className = 'logo-fallback font-black text-[#1a2e28] text-xl tracking-tighter';
+          fallback.innerText = 'MiESG';
+          parent.appendChild(fallback);
+        }
+      }}
+    />
+  );
+};
 
 const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -71,7 +86,7 @@ const App: React.FC = () => {
       <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center">
-            <div className={`transition-all duration-300 px-4 py-2 rounded-xl ${!isScrolled ? 'bg-white/90 shadow-xl' : 'bg-transparent'}`}>
+            <div className={`transition-all duration-300 px-4 py-2 rounded-xl flex items-center justify-center min-h-[40px] ${!isScrolled ? 'bg-white/90 shadow-xl' : 'bg-transparent'}`}>
               <Logo className="h-10 md:h-14 w-auto" />
             </div>
           </a>
@@ -111,7 +126,7 @@ const App: React.FC = () => {
             <button className="absolute top-6 right-6 p-2 text-[#1a2e28]" onClick={() => setIsMobileMenuOpen(false)}>
               <X size={40} />
             </button>
-            <div className="bg-white p-4 rounded-2xl mb-8">
+            <div className="bg-white p-4 rounded-2xl mb-8 flex items-center justify-center">
               <Logo className="h-20" />
             </div>
             {navLinks.map((link) => (
@@ -349,7 +364,9 @@ const App: React.FC = () => {
       <footer className="bg-white py-16 border-t border-slate-100">
         <div className="container mx-auto px-6 text-center">
            <div className="flex flex-col items-center gap-6 mb-12">
-              <Logo className="h-16 w-auto" />
+              <div className="flex items-center justify-center h-16 w-auto">
+                <Logo className="h-full" />
+              </div>
               <div className="w-24 h-1 bg-[#1a2e28] rounded-full opacity-10"></div>
            </div>
            <p className="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em]">© 2024 Malaysia Institute of ESG. All rights reserved.</p>

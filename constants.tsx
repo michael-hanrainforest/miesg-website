@@ -51,7 +51,7 @@ export const PILLARS: Pillar[] = [
       "Ensuring standards of competence across industries.",
       "Accrediting a network of ESG professionals."
     ],
-    image: "https://images.unsplash.com/photo-1523240715639-9988d1ee9b48?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&q=80&w=800",
     color: "#1a2e28"
   }
 ];
@@ -59,64 +59,43 @@ export const PILLARS: Pillar[] = [
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Dr. Ariffin Aziz",
-    role: "Executive Director",
-    bio: "Over 20 years of experience in environmental policy and sustainable development across Southeast Asia.",
+    role: "President",
+    bio: "Visionary leader with over 25 years in national sustainability strategy and international ESG advocacy.",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
-    specialty: "Environmental Policy"
+    specialty: "National Strategy"
   },
   {
     name: "Sarah Wong",
-    role: "Head of ESG Education",
-    bio: "Lead architect of Malaysia's premier ESG curriculum for corporate leadership and governance.",
+    role: "Deputy President",
+    bio: "Specialist in institutional capacity building and high-level corporate ESG transformation programs.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
-    specialty: "Capacity Building"
+    specialty: "Institutional Development"
   },
   {
     name: "Rizal Ramli",
-    role: "Director of Research",
-    bio: "Specializes in green technology impact and data-driven sustainability metrics for SMEs.",
+    role: "Vice President",
+    bio: "Leading expert in green innovation metrics and regional sustainability compliance for the industrial sector.",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
-    specialty: "Data Analytics"
+    specialty: "Innovation & Growth"
   },
   {
     name: "Elena Tan",
-    role: "Governance Advisor",
-    bio: "Expert in institutional transparency and international ESG compliance frameworks.",
+    role: "Treasurer",
+    bio: "Financial governance authority with deep expertise in sustainable finance and ESG-linked investment frameworks.",
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400",
-    specialty: "Corporate Governance"
+    specialty: "Sustainable Finance"
+  },
+  {
+    name: "David Kumar",
+    role: "Secretary",
+    bio: "Dedicated to operational excellence and maintaining the highest standards of organizational transparency.",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
+    specialty: "Governance Operations"
   }
 ];
 
-export const RESOURCES: ResourceItem[] = [
-  {
-    title: "National Tourism Sustainability Framework 2024",
-    type: "Policy Brief",
-    date: "Dec 2023",
-    size: "2.4 MB",
-    category: "Policy"
-  },
-  {
-    title: "Impact of Green Tech on Malaysian SMEs",
-    type: "Research Paper",
-    date: "Oct 2023",
-    size: "4.1 MB",
-    category: "Tech"
-  },
-  {
-    title: "Journal of ESG Excellence Vol. IV",
-    type: "Journal",
-    date: "Aug 2023",
-    size: "1.8 MB",
-    category: "Academic"
-  },
-  {
-    title: "Annual MiESG Impact Report 2023",
-    type: "Annual Report",
-    date: "Jan 2024",
-    size: "5.5 MB",
-    category: "Corporate"
-  }
-];
+// Empty resources to show "Available Soon" state in UI
+export const RESOURCES: ResourceItem[] = [];
 
 export const STRATEGIC_FOCUS: StrategicPoint[] = [
   {
@@ -148,26 +127,5 @@ export const ECOSYSTEM_PARTNERS: EcosystemPartner[] = [
   {
     title: "Academic Institutions",
     description: "Collaborating on research projects that bridge the gap between theory and practice."
-  }
-];
-
-export const LATEST_INSIGHTS = [
-  {
-    date: "Oct 24, 2023",
-    category: "Report",
-    title: "The State of ESG in Malaysian Tourism 2024",
-    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=400"
-  },
-  {
-    date: "Sep 15, 2023",
-    category: "Event",
-    title: "MiESG Annual Sustainability Forum Recap",
-    image: "https://images.unsplash.com/photo-1475721027187-402ad2989a3b?auto=format&fit=crop&q=80&w=400"
-  },
-  {
-    date: "Aug 02, 2023",
-    category: "Case Study",
-    title: "Green Tech Adoption in SME Sectors",
-    image: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&q=80&w=400"
   }
 ];

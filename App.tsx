@@ -18,30 +18,30 @@ import {
 } from 'lucide-react';
 import { PILLARS, TEAM_MEMBERS, RESOURCES, ECOSYSTEM_PARTNERS } from './constants';
 
-const Logo: React.FC<{ className?: string }> = ({ className = "h-14" }) => {
+const Logo: React.FC<{ className?: string, light?: boolean }> = ({ className = "h-12", light = false }) => {
   const [error, setError] = useState(false);
 
   return (
-    <div className="flex items-center justify-center min-w-[140px]">
+    <div className={`flex items-center justify-center min-w-[150px] transition-all duration-500 ${className}`}>
       {!error ? (
         <img 
-          src="logo.png?v=1" 
+          src={`miesg.png?v=${new Date().getTime()}`} 
           alt="MiESG Logo" 
-          className={`${className} object-contain block w-auto h-auto transition-opacity duration-300`} 
-          style={{ maxWidth: '240px', maxHeight: '60px' }}
-          loading="eager"
+          className="h-full w-auto object-contain block max-h-[64px]"
           onError={() => {
-            console.warn("Logo failed to load from logo.png. Falling back to text.");
+            console.warn("miesg.png not found, using typographic fallback.");
             setError(true);
           }}
         />
       ) : (
-        <span className="font-black text-[#1a2e28] text-2xl tracking-tighter flex items-center gap-2">
-          <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
-            <div className="w-4 h-4 bg-white rounded-full opacity-20 animate-pulse"></div>
-          </div>
-          MiESG
-        </span>
+        <div className="flex flex-col justify-center -space-y-1 select-none">
+          <span className={`text-2xl md:text-3xl font-black tracking-tighter leading-none ${light ? 'text-white' : 'text-[#1a2e28]'}`}>
+            Mi<span className="text-green-600">ESG</span>
+          </span>
+          <span className={`text-[8px] font-black uppercase tracking-[0.25em] leading-none ${light ? 'text-white/60' : 'text-slate-400'}`}>
+            Malaysia Institute
+          </span>
+        </div>
       )}
     </div>
   );
@@ -91,7 +91,7 @@ const App: React.FC = () => {
       <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center">
-            <div className={`transition-all duration-300 px-4 py-2 rounded-xl flex items-center justify-center min-h-[48px] ${!isScrolled ? 'bg-white/90 shadow-xl' : 'bg-transparent'}`}>
+            <div className={`transition-all duration-500 rounded-xl flex items-center justify-center ${!isScrolled ? 'bg-white/90 shadow-xl px-4 py-2' : 'bg-transparent'}`}>
               <Logo className="h-10 md:h-12" />
             </div>
           </a>
@@ -131,9 +131,7 @@ const App: React.FC = () => {
             <button className="absolute top-6 right-6 p-2 text-[#1a2e28]" onClick={() => setIsMobileMenuOpen(false)}>
               <X size={40} />
             </button>
-            <div className="bg-white p-6 rounded-2xl mb-8 flex items-center justify-center shadow-xl border border-slate-100">
-              <Logo className="h-16" />
-            </div>
+            <Logo className="h-24 mb-12" />
             {navLinks.map((link) => (
               <a 
                 key={link.name} 

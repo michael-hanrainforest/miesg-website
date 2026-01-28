@@ -20,9 +20,10 @@ import { PILLARS, TEAM_MEMBERS, RESOURCES, ECOSYSTEM_PARTNERS } from './constant
 
 const Logo: React.FC<{ className?: string }> = ({ className = "h-14" }) => (
   <img 
-    src="MiESG Logo.png" 
+    src="logo.png" 
     alt="MiESG Logo" 
-    className={`${className} object-contain block`} 
+    className={`${className} object-contain block w-auto`} 
+    style={{ maxWidth: '280px' }}
   />
 );
 

@@ -18,33 +18,13 @@ import {
 } from 'lucide-react';
 import { PILLARS, TEAM_MEMBERS, RESOURCES, ECOSYSTEM_PARTNERS } from './constants';
 
-const Logo: React.FC<{ className?: string }> = ({ className = "h-14" }) => {
-  const [hasError, setHasError] = useState(false);
-
-  // If the PNG fails to load (e.g., 404 or corrupted), show an elegant text fallback
-  if (hasError) {
-    return (
-      <div className={`flex items-center gap-3 ${className}`}>
-        <div className="w-10 h-10 bg-[#1a2e28] rounded-xl flex items-center justify-center text-white shadow-lg">
-          <span className="font-black text-xl">M</span>
-        </div>
-        <div className="flex flex-col leading-none">
-          <span className="font-black text-2xl tracking-tighter text-[#1a2e28]">MiESG</span>
-          <span className="text-[8px] font-bold uppercase tracking-widest text-slate-500">Malaysia Institute</span>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <img 
-      src="logo.png" 
-      alt="MiESG Logo" 
-      className={`${className} object-contain block`} 
-      onError={() => setHasError(true)}
-    />
-  );
-};
+const Logo: React.FC<{ className?: string }> = ({ className = "h-14" }) => (
+  <img 
+    src="MiESG Logo.png" 
+    alt="MiESG Logo" 
+    className={`${className} object-contain block`} 
+  />
+);
 
 const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -130,7 +110,9 @@ const App: React.FC = () => {
             <button className="absolute top-6 right-6 p-2 text-[#1a2e28]" onClick={() => setIsMobileMenuOpen(false)}>
               <X size={40} />
             </button>
-            <Logo className="h-20 mb-8" />
+            <div className="bg-white p-4 rounded-2xl mb-8">
+              <Logo className="h-20" />
+            </div>
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
@@ -188,7 +170,7 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* About */}
+        {/* About Section */}
         <section id="about" className="py-24 md:py-32 bg-white relative">
           <div className="container mx-auto px-6">
             <div className="flex flex-col lg:flex-row items-center gap-16 md:gap-24">
@@ -230,7 +212,7 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Pillars */}
+        {/* Pillars Section */}
         <section id="pillars" className="py-24 md:py-32 bg-[#1a2e28] text-white relative overflow-hidden">
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mb-24 text-center md:text-left mx-auto md:mx-0">
@@ -262,7 +244,7 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Team Hierarchy Section */}
+        {/* Team Section */}
         <section id="team" className="py-24 md:py-32 bg-slate-50 border-y border-slate-100">
           <div className="container mx-auto px-6">
             <div className="text-center mb-20 max-w-3xl mx-auto">
@@ -315,7 +297,7 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Knowledge Hub (Resources Available Soon) */}
+        {/* Resources Section */}
         <section id="resources" className="py-24 md:py-32 bg-white relative">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mb-16 text-center md:text-left mx-auto">
@@ -336,7 +318,7 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Connect Section (Simplified Direct Inquiry) */}
+        {/* Contact Section */}
         <section id="contact" className="py-24 md:py-32 bg-slate-50">
           <div className="container mx-auto px-6">
             <div className="bg-[#1a2e28] rounded-[4rem] shadow-2xl overflow-hidden relative p-12 md:p-24 text-center max-w-5xl mx-auto">

@@ -18,13 +18,33 @@ import {
 } from 'lucide-react';
 import { PILLARS, TEAM_MEMBERS, RESOURCES, ECOSYSTEM_PARTNERS } from './constants';
 
-const Logo: React.FC<{ className?: string }> = ({ className = "h-14" }) => (
-  <img 
-    src="logo.png" 
-    alt="MiESG Logo" 
-    className={`${className} object-contain`} 
-  />
-);
+const Logo: React.FC<{ className?: string }> = ({ className = "h-14" }) => {
+  const [hasError, setHasError] = useState(false);
+
+  // If the PNG fails to load (e.g., 404 or corrupted), show an elegant text fallback
+  if (hasError) {
+    return (
+      <div className={`flex items-center gap-3 ${className}`}>
+        <div className="w-10 h-10 bg-[#1a2e28] rounded-xl flex items-center justify-center text-white shadow-lg">
+          <span className="font-black text-xl">M</span>
+        </div>
+        <div className="flex flex-col leading-none">
+          <span className="font-black text-2xl tracking-tighter text-[#1a2e28]">MiESG</span>
+          <span className="text-[8px] font-bold uppercase tracking-widest text-slate-500">Malaysia Institute</span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <img 
+      src="logo.png" 
+      alt="MiESG Logo" 
+      className={`${className} object-contain block`} 
+      onError={() => setHasError(true)}
+    />
+  );
+};
 
 const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);

@@ -22,23 +22,23 @@ const Logo: React.FC<{ className?: string, light?: boolean }> = ({ className = "
   const [error, setError] = useState(false);
 
   return (
-    <div className={`flex items-center justify-center min-w-[150px] transition-all duration-500 ${className}`}>
+    <div className={`flex items-center justify-center transition-all duration-500 ${className}`}>
       {!error ? (
         <img 
-          src={`miesg.png?v=${new Date().getTime()}`} 
+          src="logo.svg" 
           alt="MiESG Logo" 
-          className="h-full w-auto object-contain block max-h-[64px]"
+          className="h-full w-auto object-contain max-h-full"
           onError={() => {
-            console.warn("miesg.png not found, using typographic fallback.");
+            console.warn("logo.svg not found, showing typographic fallback.");
             setError(true);
           }}
         />
       ) : (
         <div className="flex flex-col justify-center -space-y-1 select-none">
-          <span className={`text-2xl md:text-3xl font-black tracking-tighter leading-none ${light ? 'text-white' : 'text-[#1a2e28]'}`}>
+          <span className={`text-xl md:text-2xl font-black tracking-tighter leading-none ${light ? 'text-white' : 'text-[#1a2e28]'}`}>
             Mi<span className="text-green-600">ESG</span>
           </span>
-          <span className={`text-[8px] font-black uppercase tracking-[0.25em] leading-none ${light ? 'text-white/60' : 'text-slate-400'}`}>
+          <span className={`text-[7px] font-black uppercase tracking-[0.2em] leading-none ${light ? 'text-white/60' : 'text-slate-400'}`}>
             Malaysia Institute
           </span>
         </div>
@@ -91,8 +91,8 @@ const App: React.FC = () => {
       <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center">
-            <div className={`transition-all duration-500 rounded-xl flex items-center justify-center ${!isScrolled ? 'bg-white/90 shadow-xl px-4 py-2' : 'bg-transparent'}`}>
-              <Logo className="h-10 md:h-12" />
+            <div className={`transition-all duration-500 rounded-xl flex items-center justify-center ${!isScrolled ? 'bg-white/95 shadow-xl px-4 py-2' : 'bg-transparent'}`}>
+              <Logo className="h-10 md:h-14" />
             </div>
           </a>
 

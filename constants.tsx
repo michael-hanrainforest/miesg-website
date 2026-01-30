@@ -1,4 +1,3 @@
-
 import { Pillar, StrategicPoint, EcosystemPartner, TeamMember, ResourceItem } from './types';
 
 export const PILLARS: Pillar[] = [
@@ -58,38 +57,45 @@ export const PILLARS: Pillar[] = [
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    name: "Dr. Ariffin Aziz",
+    name: "Sarhan Bin Ismail",
     role: "President",
-    bio: "Visionary leader with over 25 years in national sustainability strategy and international ESG advocacy.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
+    bio: "Visionary leader with over 25 years in national sustainability strategy and international ESG advocacy, steering MiESG towards global excellence.",
+    image: "https://drive.google.com/thumbnail?id=10lywmbmRjLgnrJeUqcsshezdlkwJb7GM&sz=w1000",
     specialty: "National Strategy"
   },
   {
-    name: "Sarah Wong",
+    name: "Professor Dato’ Dr. Nor Aieni Mokhtar",
     role: "Deputy President",
-    bio: "Specialist in institutional capacity building and high-level corporate ESG transformation programs.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
-    specialty: "Institutional Development"
+    bio: "Distinguished authority in Ocean Engineering and Maritime Policy. Former Vice-Chancellor of UMT and Director of the National Oceanography Directorate, she is a recognized expert in coastal protection and climate resilience.",
+    image: "https://img.astroawani.com/2021-02/61613378611_TBNorAieniMokhtar.jpg",
+    specialty: "Maritime Policy & Ocean Engineering"
   },
   {
-    name: "Rizal Ramli",
+    name: "Prof. Dr. Vikneswaran Nair",
     role: "Vice President",
-    bio: "Leading expert in green innovation metrics and regional sustainability compliance for the industrial sector.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
-    specialty: "Innovation & Growth"
+    bio: "Distinguished academic and global expert in Sustainable Tourism and Responsible Development. With a PhD in Systems Engineering, he has pioneered international research in community-based ecotourism and sustainable rural development.",
+    image: "https://static.wixstatic.com/media/0d82eb_fd36f20e1ff54d0eacf317576d7acf89~mv2.jpg/v1/crop/x_0,y_14,w_570,h_679/fill/w_356,h_424,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/20180525_232224%20-%20Copy.jpg",
+    specialty: "Sustainable Tourism & Systems Engineering"
   },
   {
-    name: "Elena Tan",
+    name: "Prof. Dr. Jennifer Kim Lian Chan",
+    role: "Vice President",
+    bio: "Prominent academic and Director of the Borneo Tourism Research Centre (BTRC) at Universiti Malaysia Sabah. An expert in Sustainable Tourism and Hospitality Management, she focuses on sustainable development and service quality.",
+    image: "https://institutetourism.com/wp-content/uploads/2025/01/Jennifer-Kim-Lian-Chan.jpg",
+    specialty: "Sustainable Hospitality & Tourism Development"
+  },
+  {
+    name: "Dr. Ellieenn Tan",
     role: "Treasurer",
-    bio: "Financial governance authority with deep expertise in sustainable finance and ESG-linked investment frameworks.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400",
+    bio: "Distinguished academic and financial governance authority with deep expertise in sustainable finance and ESG-linked investment frameworks.",
+    image: "https://drive.google.com/thumbnail?id=1ogFOolAMcYgM4q6wrtkaFzhF8kSzn-Ny&sz=w800",
     specialty: "Sustainable Finance"
   },
   {
-    name: "David Kumar",
+    name: "Frank Kee",
     role: "Secretary",
-    bio: "Dedicated to operational excellence and maintaining the highest standards of organizational transparency.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
+    bio: "Dedicated professional with extensive experience in operational excellence and maintaining the highest standards of organizational transparency for MiESG.",
+    image: "https://drive.google.com/thumbnail?id=1Re8j3P8jD3qOpw65UyyNB87rxKnidyPu&sz=w800",
     specialty: "Governance Operations"
   }
 ];

@@ -26,6 +26,7 @@ export interface TeamMember {
   bio: string;
   image: string;
   specialty: string;
+  imagePosition?: string;
 }
 
 export interface ResourceItem {
@@ -34,4 +35,14 @@ export interface ResourceItem {
   date: string;
   size: string;
   category: string;
+}
+
+export interface Publication {
+  id: string;
+  title: string;
+  subtitle?: string;
+  description: string;
+  image: string;
+  type: string;
+  imagePosition?: string;
 }

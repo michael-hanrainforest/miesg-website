@@ -1,4 +1,4 @@
-import { Pillar, StrategicPoint, EcosystemPartner, TeamMember, ResourceItem } from './types';
+import { Pillar, StrategicPoint, EcosystemPartner, TeamMember, ResourceItem, Publication } from './types';
 
 export const PILLARS: Pillar[] = [
   {
@@ -85,6 +85,14 @@ export const TEAM_MEMBERS: TeamMember[] = [
     specialty: "Sustainable Hospitality & Tourism Development"
   },
   {
+    name: "Kenny Ng How Ann",
+    role: "Vice President",
+    bio: "Experienced professional dedicated to advancing ESG initiatives and fostering sustainable practices across industries.",
+    image: "https://drive.google.com/thumbnail?id=1PHJ5rtTrJcG_ExPx1W8nqCAEU5appOuD&sz=w800",
+    specialty: "ESG Initiatives",
+    imagePosition: "object-[center_20%]"
+  },
+  {
     name: "Dr. Ellieenn Tan",
     role: "Treasurer",
     bio: "Distinguished academic and financial governance authority with deep expertise in sustainable finance and ESG-linked investment frameworks.",
@@ -102,6 +110,26 @@ export const TEAM_MEMBERS: TeamMember[] = [
 
 // Empty resources to show "Available Soon" state in UI
 export const RESOURCES: ResourceItem[] = [];
+
+export const PUBLICATIONS: Publication[] = [
+  {
+    id: "biodiversity-ecotourism",
+    title: "Malaysia's Biodiversity for Ecotourism: Aligning Nature with ESG Values",
+    subtitle: "A practical guide to responsible travel, Conservation, and Community Empowerment in Malaysia.",
+    description: "Malaysia’s Biodiversity for Ecotourism: Aligning Nature with ESG Values is a practical handbook on experiencing Malaysia’s forests, rivers, islands, and indigenous cultures while protecting them. It introduces Malaysia as a megadiverse country and explains why its rainforests, reefs, mangroves, and rivers are vital for climate resilience and local livelihoods. The book links key ecosystems and iconic species to ESG principles, showing how responsible tourism can cut impacts, empower communities, and strengthen governance. Aimed at guides, students, policymakers, operators, and travellers, it supports higher-value, low-impact tourism and encourages visitors to travel with purpose and care for Malaysia’s natural heritage.",
+    image: "https://drive.google.com/thumbnail?id=1scJy89D0aizlFBkykZ72uuT80lg7Kdav&sz=w800",
+    type: "Book",
+    imagePosition: "object-right"
+  },
+  {
+    id: "biodiversity-ecotourism-infographics",
+    title: "Malaysia's Biodiversity for Ecotourism Infographics",
+    subtitle: "A Visual Guide to Nature for Young Explorers",
+    description: "The infographics presented in Malaysia’s Biodiversity for Ecotourism: Aligning Nature with ESG Values offer a structured and accessible synthesis of Malaysia’s ecological wealth and its relevance to sustainable tourism development. They translate complex relationships between biodiversity, community livelihoods, and environmental stewardship into clear visual narratives that support both learning and practical application.\n\nBy integrating themes such as forest and marine ecosystems, indigenous knowledge, ESG principles, and emerging technologies, the infographics position ecotourism not merely as a niche activity but as a strategic pathway for conservation and inclusive development. Collectively, they serve as a practical guide for policymakers, practitioners, and communities seeking to align tourism practices with long-term environmental and social sustainability.",
+    image: "https://drive.google.com/thumbnail?id=1Cl5XILIu7naTjsqrLPdsUAmgbbq-pwp0&sz=w800",
+    type: "Publication"
+  }
+];
 
 export const STRATEGIC_FOCUS: StrategicPoint[] = [
   {

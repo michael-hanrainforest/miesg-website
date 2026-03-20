@@ -15,9 +15,11 @@ const Layout: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
     setIsMobileMenuOpen(false);
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   const navLinks = [
     { name: 'Home', href: '/' },

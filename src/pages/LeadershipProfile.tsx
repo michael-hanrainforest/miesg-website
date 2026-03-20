@@ -30,7 +30,7 @@ const LeadershipProfile: React.FC = () => {
   return (
     <div className="pt-40 md:pt-48 pb-24 bg-slate-50 min-h-screen">
       <div className="container mx-auto px-6 max-w-5xl">
-        <Link to="/" className="inline-flex items-center gap-2 text-green-600 font-bold mb-12 hover:text-green-700 transition-colors uppercase tracking-widest text-xs">
+        <Link to="/#leadership" className="inline-flex items-center gap-2 text-green-600 font-bold mb-12 hover:text-green-700 transition-colors uppercase tracking-widest text-xs">
           <ArrowLeft size={16} /> Back to Leadership
         </Link>
         
@@ -39,7 +39,7 @@ const LeadershipProfile: React.FC = () => {
             <img 
               src={member.image} 
               alt={member.name} 
-              className={`w-full h-full object-cover ${member.name.includes('Vikneswaran') ? 'object-top' : 'object-center'}`} 
+              className={`w-full h-full object-cover ${member.imagePosition || (member.name.includes('Vikneswaran') ? 'object-top' : 'object-center')}`} 
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#1a2e28]/10 to-transparent pointer-events-none"></div>
           </div>

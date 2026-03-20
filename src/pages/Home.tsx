@@ -1,11 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Globe, Users, Target, ShieldCheck, Microscope } from 'lucide-react';
 import { TEAM_MEMBERS } from '../constants';
 
 const Home: React.FC = () => {
   const featuredMember = TEAM_MEMBERS.find(m => m.role === 'President');
   const otherMembers = TEAM_MEMBERS.filter(m => m.role !== 'President');
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
   return (
     <div>
@@ -76,7 +91,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-24 md:py-32 bg-slate-50 border-y border-slate-100">
+      <section id="leadership" className="py-24 md:py-32 bg-slate-50 border-y border-slate-100 scroll-mt-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20 max-w-3xl mx-auto">
             <span className="text-green-600 font-black tracking-[0.3em] uppercase text-xs mb-4 block">Leadership</span>
@@ -110,7 +125,7 @@ const Home: React.FC = () => {
               <div key={i} className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group border border-slate-100 flex flex-col">
                 <div className="relative h-80 overflow-hidden shrink-0">
                   <Link to={`/leadership/${encodeURIComponent(member.name)}`} className="block w-full h-full">
-                    <img src={member.image} alt={member.name} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${member.name.includes('Vikneswaran') ? 'object-top' : 'object-center'}`} />
+                    <img src={member.image} alt={member.name} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${member.imagePosition || (member.name.includes('Vikneswaran') ? 'object-top' : 'object-center')}`} />
                   </Link>
                 </div>
                 <div className="p-8 flex-1 flex flex-col text-center sm:text-left">

@@ -45,4 +45,7 @@ export interface Publication {
   image: string;
   type: string;
   imagePosition?: string;
+  isForSale?: boolean;
+  price?: string;
+  orderNote?: string;
 }

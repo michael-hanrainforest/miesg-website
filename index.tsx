@@ -11,6 +11,7 @@ import Events from './src/pages/Events';
 import Contact from './src/pages/Contact';
 import LeadershipProfile from './src/pages/LeadershipProfile';
 import PublicationDetail from './src/pages/PublicationDetail';
+import OrderForm from './src/pages/OrderForm';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -31,6 +32,7 @@ root.render(
           <Route path="contact" element={<Contact />} />
           <Route path="leadership/:name" element={<LeadershipProfile />} />
           <Route path="research/publications/:id" element={<PublicationDetail />} />
+          <Route path="research/publications/:id/order" element={<OrderForm />} />
         </Route>
       </Routes>
     </BrowserRouter>

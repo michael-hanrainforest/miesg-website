@@ -63,6 +63,26 @@ const PublicationDetail: React.FC = () => {
                 </p>
               ))}
             </div>
+
+            {publication.isForSale && (
+              <div className="mt-12 pt-10 border-t border-slate-100 flex flex-col items-center justify-center text-center">
+                {publication.price && (
+                  <div className="text-3xl font-black text-[#1a2e28] mb-2">{publication.price}</div>
+                )}
+                {publication.orderNote && (
+                  <div className="text-sm font-bold text-amber-600 bg-amber-50 px-4 py-2 rounded-lg mb-8 max-w-md">
+                    {publication.orderNote}
+                  </div>
+                )}
+                <Link 
+                  to={`/research/publications/${publication.id}/order`}
+                  className="bg-[#1a2e28] text-white px-12 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:bg-[#2d5a27] transition-all shadow-xl transform hover:-translate-y-1 flex items-center gap-3 group"
+                >
+                  <BookOpen size={18} className="group-hover:scale-110 transition-transform" />
+                  Order Now
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

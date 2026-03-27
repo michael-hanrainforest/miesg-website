@@ -119,7 +119,10 @@ export const PUBLICATIONS: Publication[] = [
     description: "Malaysia’s Biodiversity for Ecotourism: Aligning Nature with ESG Values is a practical handbook on experiencing Malaysia’s forests, rivers, islands, and indigenous cultures while protecting them. It introduces Malaysia as a megadiverse country and explains why its rainforests, reefs, mangroves, and rivers are vital for climate resilience and local livelihoods. The book links key ecosystems and iconic species to ESG principles, showing how responsible tourism can cut impacts, empower communities, and strengthen governance. Aimed at guides, students, policymakers, operators, and travellers, it supports higher-value, low-impact tourism and encourages visitors to travel with purpose and care for Malaysia’s natural heritage.",
     image: "https://drive.google.com/thumbnail?id=1scJy89D0aizlFBkykZ72uuT80lg7Kdav&sz=w800",
     type: "Book",
-    imagePosition: "object-right"
+    imagePosition: "object-right",
+    isForSale: true,
+    price: "RM45",
+    orderNote: "Note: The RM45 price includes a complete set of two books: the main publication and the companion 'Malaysia's Biodiversity for Ecotourism Infographics'."
   },
   {
     id: "biodiversity-ecotourism-infographics",

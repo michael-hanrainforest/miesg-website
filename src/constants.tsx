@@ -105,6 +105,14 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: "Dedicated professional with extensive experience in operational excellence and maintaining the highest standards of organizational transparency for MiESG.",
     image: "https://drive.google.com/thumbnail?id=1Re8j3P8jD3qOpw65UyyNB87rxKnidyPu&sz=w800",
     specialty: "Governance Operations"
+  },
+  {
+    name: "Prof. Dr. Lawal M. Marafa",
+    role: "International Advisor",
+    bio: "Prof. Dr. Lawal M. Marafa is a distinguished professor in the Department of Geography and Resource Management at The Chinese University of Hong Kong (CUHK). He is a renowned expert in sustainable tourism, ecotourism, and environmental management, serving as the founding director of the Master of Social Science in Sustainable Tourism.\n\nKey Roles and Expertise:\n• Academic Leadership: Director of the Postgraduate Programme in Sustainable Tourism at CUHK.\n• Research Areas: Sustainable tourism, environment and climate change, ecotourism, leisure, recreation planning, and natural resource management.\n• World Leisure Organization: Senior Fellow of the World Leisure Academy and Board of Directors member.\n• International Roles: Member of the UN World Committee on Tourism Ethics, and previously a facilitator for the Clinton Global Initiative.\n\nAwards and Recognition:\n• Received the \"Exemplary Teacher Award\" at CUHK in 2005.\n• Recipient of the Royal Belum Inaugural Ecotourism Award (2007) in Malaysia.",
+    image: "https://drive.google.com/thumbnail?id=11Y-vKq9127HfvLX6Wb_J76y_04NJTHEI&sz=w800",
+    specialty: "Sustainable Tourism & Environmental Management",
+    imagePosition: "object-top"
   }
 ];
 

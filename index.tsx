@@ -8,6 +8,7 @@ import About from './src/pages/About';
 import Services from './src/pages/Services';
 import Research from './src/pages/Research';
 import Events from './src/pages/Events';
+import EventDetails from './src/pages/EventDetails';
 import Contact from './src/pages/Contact';
 import LeadershipProfile from './src/pages/LeadershipProfile';
 import PublicationDetail from './src/pages/PublicationDetail';
@@ -29,6 +30,7 @@ root.render(
           <Route path="services" element={<Services />} />
           <Route path="research" element={<Research />} />
           <Route path="events" element={<Events />} />
+          <Route path="events/:id" element={<EventDetails />} />
           <Route path="contact" element={<Contact />} />
           <Route path="leadership/:name" element={<LeadershipProfile />} />
           <Route path="research/publications/:id" element={<PublicationDetail />} />

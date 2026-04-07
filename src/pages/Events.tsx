@@ -15,112 +15,13 @@ import {
   isAfter,
   startOfDay
 } from 'date-fns';
-
-const UPCOMING_EVENTS = [
-  {
-    id: 1,
-    title: "Meeting with MPC",
-    date: "2026-03-26",
-    time: "TBA",
-    location: "TBA",
-    description: "Tentative meeting with MPC.",
-    type: "Meeting"
-  },
-  {
-    id: 2,
-    title: "Earth Day Webinar (UNIMY)",
-    date: "2026-04-22",
-    time: "02:00 PM - 05:00 PM",
-    location: "UNIMY (Virtual)",
-    description: "Earth Day Webinar hosted by UNIMY.",
-    type: "Webinar"
-  },
-  {
-    id: 3,
-    title: "Official meeting of MiESG",
-    date: "2026-05-16",
-    time: "09:00 AM - 12:00 PM",
-    location: "MIRCA",
-    description: "Official meeting of MiESG.",
-    type: "Meeting"
-  },
-  {
-    id: 4,
-    title: "Tree Planting Day",
-    date: "2026-06-05",
-    time: "TBA",
-    location: "TBC",
-    description: "Tree Planting Day with Raja Muda Selangor.",
-    type: "Event"
-  },
-  {
-    id: 5,
-    title: "Rimba Park Resort Launching",
-    date: "2026-06-08",
-    time: "Multi-day (June 8 - June 10)",
-    location: "Rimba Park Resort",
-    description: "Launching event for Rimba Park Resort.",
-    type: "Launch"
-  },
-  {
-    id: 6,
-    title: "Rimba Park Resort Launching",
-    date: "2026-06-09",
-    time: "Multi-day (June 8 - June 10)",
-    location: "Rimba Park Resort",
-    description: "Launching event for Rimba Park Resort.",
-    type: "Launch"
-  },
-  {
-    id: 7,
-    title: "Rimba Park Resort Launching",
-    date: "2026-06-10",
-    time: "Multi-day (June 8 - June 10)",
-    location: "Rimba Park Resort",
-    description: "Launching event for Rimba Park Resort.",
-    type: "Launch"
-  },
-  {
-    id: 8,
-    title: "MiESG Official Meeting",
-    date: "2026-07-01",
-    time: "First week of July",
-    location: "MIRCA",
-    description: "MiESG official meeting with Raja Muda Selangor.",
-    type: "Meeting"
-  },
-  {
-    id: 9,
-    title: "Offroad Fair",
-    date: "2026-10-23",
-    time: "Multi-day (Oct 23 - Oct 25)",
-    location: "Putra World Trade Centre",
-    description: "Offroad Fair (Explorer outfitter, ooi).",
-    type: "Fair"
-  },
-  {
-    id: 10,
-    title: "Offroad Fair",
-    date: "2026-10-24",
-    time: "Multi-day (Oct 23 - Oct 25)",
-    location: "Putra World Trade Centre",
-    description: "Offroad Fair (Explorer outfitter, ooi).",
-    type: "Fair"
-  },
-  {
-    id: 11,
-    title: "Offroad Fair",
-    date: "2026-10-25",
-    time: "Multi-day (Oct 23 - Oct 25)",
-    location: "Putra World Trade Centre",
-    description: "Offroad Fair (Explorer outfitter, ooi).",
-    type: "Fair"
-  }
-];
+import { Link, useNavigate } from 'react-router-dom';
+import { UPCOMING_EVENTS } from '../data/events';
 
 const Events: React.FC = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const navigate = useNavigate();
 
   const nextMonth = () => setCurrentMonth(addMonths(currentMonth, 1));
   const prevMonth = () => setCurrentMonth(subMonths(currentMonth, 1));
@@ -194,11 +95,23 @@ const Events: React.FC = () => {
             
             {hasEvents && (
               <div className="mt-2 flex flex-col gap-1">
-                {dayEvents.map(event => (
-                  <div key={event.id} className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded truncate font-medium">
-                    {event.title}
-                  </div>
-                ))}
+                {dayEvents.map(event => {
+                  const isClickable = event.id === 2 || event.requiresRegistration;
+                  return (
+                    <div 
+                      key={event.id} 
+                      className={`text-xs px-2 py-1 rounded truncate font-medium ${isClickable ? 'bg-green-200 text-green-900 hover:bg-green-300' : 'bg-green-100 text-green-800'}`}
+                      onClick={(e) => {
+                        if (isClickable) {
+                          e.stopPropagation();
+                          navigate(`/events/${event.id}`);
+                        }
+                      }}
+                    >
+                      {event.title}
+                    </div>
+                  );
+                })}
               </div>
             )}
           </div>
@@ -263,25 +176,41 @@ const Events: React.FC = () => {
                 
                 {selectedDayEvents.length > 0 ? (
                   <div className="space-y-6">
-                    {selectedDayEvents.map(event => (
-                      <div key={event.id} className="border-l-4 border-green-500 pl-4 py-1">
-                        <span className="text-xs font-bold uppercase tracking-wider text-green-600 mb-1 block">{event.type}</span>
-                        <h4 className="font-bold text-slate-900 text-lg mb-2">{event.title}</h4>
-                        <div className="space-y-2 text-sm text-slate-600">
-                          <div className="flex items-center gap-2">
-                            <Clock className="w-4 h-4" />
-                            <span>{event.time}</span>
+                    {selectedDayEvents.map(event => {
+                      const content = (
+                        <div className="border-l-4 border-green-500 pl-4 py-1">
+                          <span className="text-xs font-bold uppercase tracking-wider text-green-600 mb-1 block">{event.type}</span>
+                          <h4 className="font-bold text-slate-900 text-lg mb-2 group-hover:text-green-700 transition-colors">{event.title}</h4>
+                          <div className="space-y-2 text-sm text-slate-600">
+                            <div className="flex items-center gap-2">
+                              <Clock className="w-4 h-4" />
+                              <span>{event.time}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <MapPin className="w-4 h-4" />
+                              <span>{event.location}</span>
+                            </div>
                           </div>
-                          <div className="flex items-center gap-2">
-                            <MapPin className="w-4 h-4" />
-                            <span>{event.location}</span>
-                          </div>
+                          <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+                            {event.description}
+                          </p>
                         </div>
-                        <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                          {event.description}
-                        </p>
-                      </div>
-                    ))}
+                      );
+
+                      if (event.id === 2 || event.requiresRegistration) {
+                        return (
+                          <Link key={event.id} to={`/events/${event.id}`} className="block group hover:bg-slate-50 p-2 -ml-2 rounded-lg transition-colors">
+                            {content}
+                          </Link>
+                        );
+                      }
+
+                      return (
+                        <div key={event.id} className="p-2 -ml-2">
+                          {content}
+                        </div>
+                      );
+                    })}
                   </div>
                 ) : (
                   <p className="text-slate-500 italic">No events scheduled for this day.</p>
@@ -292,19 +221,26 @@ const Events: React.FC = () => {
               <div className="bg-[#1a2e28] p-6 md:p-8 rounded-2xl shadow-sm text-white">
                 <h3 className="text-xl font-bold mb-6">All Upcoming Events</h3>
                 <div className="space-y-6">
-                  {upcomingEvents.slice(0, 4).map(event => (
-                    <div key={event.id} className="group cursor-pointer" onClick={() => {
-                      setCurrentMonth(parseISO(event.date));
-                      setSelectedDate(parseISO(event.date));
-                    }}>
-                      <div className="text-green-400 text-sm font-bold mb-1">
-                        {format(parseISO(event.date), 'MMM d, yyyy')}
+                  {upcomingEvents.slice(0, 4).map(event => {
+                    const isClickable = event.id === 2 || event.requiresRegistration;
+                    return (
+                      <div key={event.id} className="group cursor-pointer" onClick={() => {
+                        if (isClickable) {
+                          navigate(`/events/${event.id}`);
+                        } else {
+                          setCurrentMonth(parseISO(event.date));
+                          setSelectedDate(parseISO(event.date));
+                        }
+                      }}>
+                        <div className="text-green-400 text-sm font-bold mb-1">
+                          {format(parseISO(event.date), 'MMM d, yyyy')}
+                        </div>
+                        <h4 className="font-semibold text-white group-hover:text-green-300 transition-colors">
+                          {event.title}
+                        </h4>
                       </div>
-                      <h4 className="font-semibold text-white group-hover:text-green-300 transition-colors">
-                        {event.title}
-                      </h4>
-                    </div>
-                  ))}
+                    );
+                  })}
                   {upcomingEvents.length === 0 && (
                     <p className="text-white/60 italic">No upcoming events at the moment.</p>
                   )}

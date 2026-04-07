@@ -50,9 +50,9 @@ const LeadershipProfile: React.FC = () => {
             <p className="text-slate-400 font-bold text-sm uppercase mb-8 tracking-widest">{member.role}</p>
             
             <div className="prose prose-lg prose-slate max-w-none">
-              <p className="text-slate-600 leading-relaxed text-lg">
+              <div className="text-slate-600 leading-relaxed text-lg whitespace-pre-wrap">
                 {member.bio}
-              </p>
+              </div>
               {/* If we add fullBio later, we can render it here */}
             </div>
           </div>

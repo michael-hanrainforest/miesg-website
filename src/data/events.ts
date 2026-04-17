@@ -23,6 +23,15 @@ export const UPCOMING_EVENTS: EventData[] = [
     type: "Meeting"
   },
   {
+    id: 12,
+    title: "Asia Offroad Expo & Convention 2026 (AOX 2026) Launching",
+    date: "2026-04-28",
+    time: "TBA",
+    location: "TBA",
+    description: "Official launch event for Asia Offroad Expo & Convention 2026.",
+    type: "Launch"
+  },
+  {
     id: 2,
     title: "UNIMY–MiESG Earth Day 2026 Webinar",
     date: "2026-04-22",

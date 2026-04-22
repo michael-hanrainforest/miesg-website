@@ -10,6 +10,7 @@ export interface EventData {
   registrationLink?: string;
   fullDescription?: string;
   image?: string;
+  images?: string[];
 }
 
 export const UPCOMING_EVENTS: EventData[] = [
@@ -26,10 +27,15 @@ export const UPCOMING_EVENTS: EventData[] = [
     id: 12,
     title: "Asia Offroad Expo & Convention 2026 (AOX 2026) Launching",
     date: "2026-04-28",
-    time: "TBA",
-    location: "TBA",
+    time: "02:30 PM",
+    location: "Dewan Tun Dr Ismail, WTCKL",
     description: "Official launch event for Asia Offroad Expo & Convention 2026.",
-    type: "Launch"
+    fullDescription: "Join us for the official launching of the Asia Offroad Expo & Convention 2026 (AOX 2026)! This landmark event will unveil the comprehensive roadmap for the region’s premier off-roading convention, highlighting advancements in 4x4 engineering, ecotourism integrations, and sustainable off-roading practices. Industry leaders, enthusiasts, and key ecosystem partners will gather to discuss the intersections of adventure tourism and structural ESG frameworks.",
+    type: "Launch",
+    images: [
+      "https://drive.google.com/thumbnail?id=1ER4kREWNelAHOgDzmRUIoqxA9dsgCT_C&sz=w1000",
+      "https://drive.google.com/thumbnail?id=12L6qy9mqu-YYEvvLeycUZ_AtskPhL2tr&sz=w1000"
+    ]
   },
   {
     id: 2,

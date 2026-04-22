@@ -88,6 +88,19 @@ const EventDetails: React.FC = () => {
                 />
               </div>
             )}
+            
+            {event.images && event.images.length > 0 && (
+              <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                {event.images.map((img, i) => (
+                  <img 
+                    key={i}
+                    src={img} 
+                    alt={`${event.title} Poster ${i + 1}`} 
+                    className="w-full h-auto rounded-2xl shadow-lg border border-slate-200 object-cover"
+                  />
+                ))}
+              </div>
+            )}
 
             <h2 className="text-2xl font-bold text-slate-900 mb-4">About This Event</h2>
             <div className="prose prose-slate max-w-none mb-12">

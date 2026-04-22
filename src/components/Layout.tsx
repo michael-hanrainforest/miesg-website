@@ -132,7 +132,7 @@ const Layout: React.FC = () => {
             <div>
               <h4 className="font-black text-[#1a2e28] uppercase tracking-widest text-sm mb-6">Contact</h4>
               <ul className="space-y-4 text-slate-500 font-medium">
-                <li>enquiry.miesg@gmail.com</li>
+                <li>hello@miesg.org</li>
               </ul>
             </div>
           </div>

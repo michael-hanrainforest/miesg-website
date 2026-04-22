@@ -96,7 +96,7 @@ const Events: React.FC = () => {
             {hasEvents && (
               <div className="mt-2 flex flex-col gap-1">
                 {dayEvents.map(event => {
-                  const isClickable = event.id === 2 || event.requiresRegistration;
+                  const isClickable = event.id === 2 || event.requiresRegistration || !!event.fullDescription || !!event.images;
                   return (
                     <div 
                       key={event.id} 
@@ -197,7 +197,8 @@ const Events: React.FC = () => {
                         </div>
                       );
 
-                      if (event.id === 2 || event.requiresRegistration) {
+                      const isClickable = event.id === 2 || event.requiresRegistration || !!event.fullDescription || !!event.images;
+                      if (isClickable) {
                         return (
                           <Link key={event.id} to={`/events/${event.id}`} className="block group hover:bg-slate-50 p-2 -ml-2 rounded-lg transition-colors">
                             {content}
@@ -222,7 +223,7 @@ const Events: React.FC = () => {
                 <h3 className="text-xl font-bold mb-6">All Upcoming Events</h3>
                 <div className="space-y-6">
                   {upcomingEvents.slice(0, 4).map(event => {
-                    const isClickable = event.id === 2 || event.requiresRegistration;
+                    const isClickable = event.id === 2 || event.requiresRegistration || !!event.fullDescription || !!event.images;
                     return (
                       <div key={event.id} className="group cursor-pointer" onClick={() => {
                         if (isClickable) {

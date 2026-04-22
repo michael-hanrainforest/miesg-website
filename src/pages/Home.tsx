@@ -4,8 +4,6 @@ import { ArrowRight, Globe, Users, Target, ShieldCheck, Microscope } from 'lucid
 import { TEAM_MEMBERS } from '../constants';
 
 const Home: React.FC = () => {
-  const featuredMember = TEAM_MEMBERS.find(m => m.role === 'President');
-  const otherMembers = TEAM_MEMBERS.filter(m => m.role !== 'President');
   const location = useLocation();
 
   useEffect(() => {
@@ -99,29 +97,8 @@ const Home: React.FC = () => {
             <p className="text-slate-500 text-lg md:text-xl font-medium text-center">Our board consists of recognized experts at the intersection of public policy and private governance.</p>
           </div>
           
-          {featuredMember && (
-            <div className="max-w-4xl mx-auto mb-20">
-               <div className="bg-white rounded-[3rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col md:flex-row group transition-all duration-700 hover:shadow-2xl">
-                  <div className="w-full md:w-2/5 h-96 md:h-auto overflow-hidden relative">
-                     <Link to={`/leadership/${encodeURIComponent(featuredMember.name)}`}>
-                       <img src={featuredMember.image} alt={featuredMember.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                     </Link>
-                     <div className="absolute inset-0 bg-gradient-to-r from-[#1a2e28]/20 to-transparent pointer-events-none"></div>
-                  </div>
-                  <div className="p-10 md:p-16 flex-1 flex flex-col justify-center">
-                     <span className="text-green-600 font-black text-xs uppercase tracking-[0.4em] mb-4 block">Institutional Leadership</span>
-                     <Link to={`/leadership/${encodeURIComponent(featuredMember.name)}`}>
-                       <h3 className="text-4xl md:text-5xl font-black text-[#1a2e28] mb-2 tracking-tight hover:text-green-600 transition-colors">{featuredMember.name}</h3>
-                     </Link>
-                     <p className="text-green-600 font-black text-lg uppercase mb-6 tracking-widest">{featuredMember.role}</p>
-                     <p className="text-slate-500 text-lg leading-relaxed italic mb-8">"{featuredMember.bio}"</p>
-                  </div>
-               </div>
-            </div>
-          )}
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {otherMembers.map((member, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {TEAM_MEMBERS.map((member, i) => (
               <div key={i} className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group border border-slate-100 flex flex-col">
                 <div className="relative h-80 overflow-hidden shrink-0">
                   <Link to={`/leadership/${encodeURIComponent(member.name)}`} className="block w-full h-full">

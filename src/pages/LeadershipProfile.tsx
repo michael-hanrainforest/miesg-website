@@ -34,8 +34,8 @@ const LeadershipProfile: React.FC = () => {
           <ArrowLeft size={16} /> Back to Leadership
         </Link>
         
-        <div className="bg-white rounded-[3rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col md:flex-row">
-          <div className="w-full md:w-2/5 h-[500px] md:h-auto relative">
+        <div className="bg-white rounded-[3rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col md:flex-row items-start">
+          <div className="w-full md:w-2/5 h-[400px] lg:h-[600px] relative shrink-0">
             <img 
               src={member.image} 
               alt={member.name} 

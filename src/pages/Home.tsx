@@ -88,17 +88,44 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Leadership Section */}
+      {/* Advisors & Leadership Sections */}
       <section id="leadership" className="py-24 md:py-32 bg-slate-50 border-y border-slate-100 scroll-mt-24">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-20 max-w-3xl mx-auto">
+          {/* Advisors Section */}
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <span className="text-green-600 font-black tracking-[0.3em] uppercase text-xs mb-4 block">Patrons & Advisors</span>
+            <h2 className="text-4xl md:text-5xl font-black text-[#1a2e28] mb-8 tracking-tighter leading-none text-center">Global Advisory</h2>
+            <p className="text-slate-500 text-lg md:text-xl font-medium text-center">Guided by international experts driving forward sustainable development frameworks.</p>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-8 mb-24">
+            {TEAM_MEMBERS.filter(m => m.role.toLowerCase().includes('advisor') || m.role.toLowerCase().includes('patron')).map((member, i) => (
+              <div key={i} className="bg-white w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] xl:w-[calc(25%-1.5rem)] rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group border border-slate-100 flex flex-col">
+                <div className="relative h-80 overflow-hidden shrink-0">
+                  <Link to={`/leadership/${encodeURIComponent(member.name)}`} className="block w-full h-full">
+                    <img src={member.image} alt={member.name} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${member.imagePosition || (member.name.includes('Vikneswaran') ? 'object-top' : 'object-center')}`} />
+                  </Link>
+                </div>
+                <div className="p-8 flex-1 flex flex-col text-center sm:text-left">
+                  <span className="text-green-600 font-black text-[10px] uppercase tracking-[0.2em] mb-2 block">{member.specialty}</span>
+                  <Link to={`/leadership/${encodeURIComponent(member.name)}`}>
+                    <h3 className="text-2xl font-black text-[#1a2e28] leading-tight mb-2 hover:text-green-600 transition-colors">{member.name}</h3>
+                  </Link>
+                  <p className="text-slate-400 font-bold text-[10px] uppercase mb-4 tracking-wider">{member.role}</p>
+                  <p className="text-slate-500 text-sm leading-relaxed italic line-clamp-3">"{member.bio}"</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mb-16 max-w-3xl mx-auto pt-8 border-t border-slate-200">
             <span className="text-green-600 font-black tracking-[0.3em] uppercase text-xs mb-4 block">Leadership</span>
-            <h2 className="text-4xl md:text-6xl font-black text-[#1a2e28] mb-8 tracking-tighter leading-none text-center">Institutional Leadership</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-[#1a2e28] mb-8 tracking-tighter leading-none text-center">Institutional Leadership</h2>
             <p className="text-slate-500 text-lg md:text-xl font-medium text-center">Our board consists of recognized experts at the intersection of public policy and private governance.</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {TEAM_MEMBERS.map((member, i) => (
+            {TEAM_MEMBERS.filter(m => !m.role.toLowerCase().includes('advisor') && !m.role.toLowerCase().includes('patron')).map((member, i) => (
               <div key={i} className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group border border-slate-100 flex flex-col">
                 <div className="relative h-80 overflow-hidden shrink-0">
                   <Link to={`/leadership/${encodeURIComponent(member.name)}`} className="block w-full h-full">

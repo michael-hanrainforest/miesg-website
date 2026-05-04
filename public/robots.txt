@@ -1,0 +1,34 @@
+# robots.txt for MiESG
+
+# Allow standard search engines to index the site (SEO)
+User-agent: *
+Allow: /
+
+# Explicitly allow OpenAI / ChatGPT so users can ask ChatGPT about the site
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# Explicitly allow Google's AI (Gemini / AI Overviews)
+User-agent: Google-Extended
+Allow: /
+User-agent: GoogleTheWorld
+Allow: /
+
+# Explicitly allow Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+
+# Explicitly allow Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Block overly aggressive general scrapers if you want, 
+# but allowing the ones above ensures AI chats can search the URL.

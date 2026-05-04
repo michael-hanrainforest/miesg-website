@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronUp } from 'lucide-react';
+import { Menu, X, ChevronUp, Facebook } from 'lucide-react';
 import { Logo } from './Logo';
 
 const Layout: React.FC = () => {
@@ -27,6 +27,7 @@ const Layout: React.FC = () => {
     { name: 'Services', href: '/services' },
     { name: 'Research', href: '/research' },
     { name: 'Events', href: '/events' },
+    { name: 'Updates', href: '/updates' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -73,18 +74,14 @@ const Layout: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Nav Overlay */}
+        {/* Mobile Nav Dropdown */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center p-8 space-y-8 animate-in fade-in slide-in-from-top duration-300">
-            <button className="absolute top-6 right-6 p-2 text-[#1a2e28]" onClick={() => setIsMobileMenuOpen(false)}>
-              <X size={40} />
-            </button>
-            <Logo className="h-32 mb-12" />
+          <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-2xl border-t border-slate-100 flex flex-col p-6 animate-in slide-in-from-top-2 duration-200 max-h-[calc(100vh-100px)] overflow-y-auto">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
                 to={link.href} 
-                className={`text-4xl font-black uppercase tracking-tighter ${location.pathname === link.href ? 'text-green-600' : 'text-[#1a2e28]'}`}
+                className={`py-4 text-xl font-black uppercase tracking-widest border-b border-slate-50 last:border-none ${location.pathname === link.href ? 'text-green-600' : 'text-slate-600'}`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
@@ -92,7 +89,7 @@ const Layout: React.FC = () => {
             ))}
             <Link 
               to="/contact" 
-              className="mt-8 bg-[#1a2e28] text-white w-full max-w-xs p-6 rounded-2xl text-center font-black uppercase tracking-widest text-xl shadow-2xl"
+              className="mt-6 bg-[#1a2e28] text-white w-full p-4 rounded-xl text-center font-black uppercase tracking-widest shadow-lg"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Partner With MiESG
@@ -130,9 +127,15 @@ const Layout: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="font-black text-[#1a2e28] uppercase tracking-widest text-sm mb-6">Contact</h4>
+              <h4 className="font-black text-[#1a2e28] uppercase tracking-widest text-sm mb-6">Contact & Socials</h4>
               <ul className="space-y-4 text-slate-500 font-medium">
                 <li>hello@miesg.org</li>
+                <li>
+                  <a href="https://www.facebook.com/profile.php?id=61589378155156" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-green-600 transition-colors">
+                    <Facebook size={18} />
+                    Facebook
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

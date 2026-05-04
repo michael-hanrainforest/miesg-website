@@ -13,6 +13,8 @@ import Contact from './src/pages/Contact';
 import LeadershipProfile from './src/pages/LeadershipProfile';
 import PublicationDetail from './src/pages/PublicationDetail';
 import OrderForm from './src/pages/OrderForm';
+import Updates from './src/pages/Updates';
+import UpdateDetail from './src/pages/UpdateDetail';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -31,6 +33,8 @@ root.render(
           <Route path="research" element={<Research />} />
           <Route path="events" element={<Events />} />
           <Route path="events/:id" element={<EventDetails />} />
+          <Route path="updates" element={<Updates />} />
+          <Route path="updates/:id" element={<UpdateDetail />} />
           <Route path="contact" element={<Contact />} />
           <Route path="leadership/:name" element={<LeadershipProfile />} />
           <Route path="research/publications/:id" element={<PublicationDetail />} />

@@ -1,7 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { PUBLICATIONS } from '../constants';
-import { BookOpen } from 'lucide-react';
+import { PUBLICATIONS, RESEARCH_JOURNALS } from '../constants';
+import { BookOpen, ExternalLink, FileText, Download, Eye, EyeOff } from 'lucide-react';
+import { ResearchJournal } from '../types';
+
+const JournalItem = ({ journal }: { journal: ResearchJournal }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // Extract ID from Google Drive URL
+  const idMatch = journal.url.match(/\/d\/(.*?)\/view/);
+  const driveId = idMatch ? idMatch[1] : '';
+  const previewUrl = `https://drive.google.com/file/d/${driveId}/preview`;
+  const downloadUrl = `https://drive.google.com/uc?export=download&id=${driveId}`;
+
+  return (
+    <div className="bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-lg">
+      <div className="p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="flex items-start gap-6 flex-1">
+          <div className="bg-white p-4 rounded-xl shadow-sm text-green-700 shrink-0">
+            <FileText size={32} />
+          </div>
+          <div>
+            <h3 className="text-xl md:text-2xl font-bold text-[#1a2e28] leading-tight mb-2">
+              {journal.title}
+            </h3>
+            <p className="text-sm font-medium text-slate-500 uppercase tracking-widest flex items-center gap-2">
+              Technical & Discussion Paper
+            </p>
+          </div>
+        </div>
+        
+        <div className="flex items-center gap-3 w-full md:w-auto shrink-0 mt-4 md:mt-0">
+          <button 
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="flex-1 md:flex-none flex items-center justify-center gap-2 px-6 py-3 bg-[#1a2e28] text-white rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-[#2a4a40] transition-colors"
+          >
+            {isExpanded ? <EyeOff size={16} /> : <Eye size={16} />}
+            {isExpanded ? 'Close' : 'Read'}
+          </button>
+          
+          <a 
+            href={downloadUrl}
+            className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-3 bg-white text-[#1a2e28] border border-slate-200 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-slate-50 transition-colors"
+          >
+            <Download size={16} />
+          </a>
+        </div>
+      </div>
+
+      {isExpanded && driveId && (
+        <div className="border-t border-slate-200 bg-white">
+          <iframe 
+            src={previewUrl} 
+            className="w-full h-[600px] md:h-[800px]" 
+            allow="autoplay" 
+            title={journal.title}
+          />
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Research: React.FC = () => {
   return (
@@ -67,6 +126,24 @@ const Research: React.FC = () => {
                   </Link>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technical and Discussion Papers Section */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-black text-[#1a2e28] mb-6 tracking-tighter">Technical and Discussion Papers</h2>
+            <p className="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto">
+              Read our latest technical insights and thought-provoking discussion papers on ESG and sustainability.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto grid gap-6">
+            {RESEARCH_JOURNALS.map((journal, index) => (
+              <JournalItem key={index} journal={journal} />
             ))}
           </div>
         </div>

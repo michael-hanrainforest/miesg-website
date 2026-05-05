@@ -1,4 +1,4 @@
-import { Pillar, StrategicPoint, EcosystemPartner, TeamMember, ResourceItem, Publication } from './types';
+import { Pillar, StrategicPoint, EcosystemPartner, TeamMember, ResourceItem, Publication, ResearchJournal } from './types';
 
 export const PILLARS: Pillar[] = [
   {
@@ -188,5 +188,24 @@ export const ECOSYSTEM_PARTNERS: EcosystemPartner[] = [
   {
     title: "Academic Institutions",
     description: "Collaborating on research projects that bridge the gap between theory and practice."
+  }
+];
+
+export const RESEARCH_JOURNALS: ResearchJournal[] = [
+  {
+    title: "Positioning ESG with Sustainable Development",
+    url: "https://drive.google.com/file/d/128Fr7FZAyZdZumdtjuGVwbgLIhO7KP7a/view?usp=sharing"
+  },
+  {
+    title: "Digital Systems and ESG",
+    url: "https://drive.google.com/file/d/1AOEFdMwSXg8DU9pR3Yu6Z6fBYna8sB7C/view?usp=sharing"
+  },
+  {
+    title: "Data to Decisions",
+    url: "https://drive.google.com/file/d/1mCwoXC3-ATDIGtX9h_ieI8B6831KmjcD/view?usp=sharing"
+  },
+  {
+    title: "Reframing ESG and Sustainability",
+    url: "https://drive.google.com/file/d/1vR3sQG931exmsL6-rEIJx1Y66bIQ8WSR/view?usp=sharing"
   }
 ];

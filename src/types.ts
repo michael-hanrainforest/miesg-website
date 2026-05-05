@@ -37,6 +37,11 @@ export interface ResourceItem {
   category: string;
 }
 
+export interface ResearchJournal {
+  title: string;
+  url: string;
+}
+
 export interface Publication {
   id: string;
   title: string;

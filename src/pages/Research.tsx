@@ -24,7 +24,11 @@ const JournalItem = ({ journal }: { journal: ResearchJournal }) => {
             <h3 className="text-xl md:text-2xl font-bold text-[#1a2e28] leading-tight mb-2">
               {journal.title}
             </h3>
-            <p className="text-sm font-medium text-slate-500 uppercase tracking-widest flex items-center gap-2">
+            <div className="mb-4">
+              <span className="text-[#1a2e28] font-bold">{journal.author}</span>
+              <p className="text-slate-600 text-sm mt-1">{journal.authorRole}</p>
+            </div>
+            <p className="text-xs font-medium text-slate-400 uppercase tracking-widest flex items-center gap-2">
               Technical & Discussion Paper
             </p>
           </div>

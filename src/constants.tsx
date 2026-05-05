@@ -193,19 +193,27 @@ export const ECOSYSTEM_PARTNERS: EcosystemPartner[] = [
 
 export const RESEARCH_JOURNALS: ResearchJournal[] = [
   {
-    title: "Positioning ESG with Sustainable Development",
+    title: "Positioning ESG within Sustainable Development: From Concepts to Strategic Integration",
+    author: "Prof. Lawal Marafa",
+    authorRole: "Professor, Dept of Geography & Resources Management, The Chinese University of Hong Kong",
     url: "https://drive.google.com/file/d/128Fr7FZAyZdZumdtjuGVwbgLIhO7KP7a/view?usp=sharing"
   },
   {
-    title: "Digital Systems and ESG",
-    url: "https://drive.google.com/file/d/1AOEFdMwSXg8DU9pR3Yu6Z6fBYna8sB7C/view?usp=sharing"
-  },
-  {
-    title: "Data to Decisions",
+    title: "From Data to Decisions: Closing the Execution Gap in ESG and Digital Sustainability",
+    author: "Say Lim",
+    authorRole: "Co-Founder & Chief Executive Officer, SquareCloud (Malaysia) Sdn. Bhd.",
     url: "https://drive.google.com/file/d/1mCwoXC3-ATDIGtX9h_ieI8B6831KmjcD/view?usp=sharing"
   },
   {
-    title: "Reframing ESG and Sustainability",
+    title: "Reframing ESG and Sustainability: From Systems to Social Agency, Trust, and Participation",
+    author: "Dr. Jennifer Chan Kim Lian",
+    authorRole: "Executive Board Member, Asian Ecotourism Network",
     url: "https://drive.google.com/file/d/1vR3sQG931exmsL6-rEIJx1Y66bIQ8WSR/view?usp=sharing"
+  },
+  {
+    title: "Digital Systems, ESG Accountability, and the Limits of Technological Optimism",
+    author: "Sarhan Bin Ismail",
+    authorRole: "President, Malaysia Institute of ESG (MiESG)",
+    url: "https://drive.google.com/file/d/1AOEFdMwSXg8DU9pR3Yu6Z6fBYna8sB7C/view?usp=sharing"
   }
 ];

@@ -39,6 +39,8 @@ export interface ResourceItem {
 
 export interface ResearchJournal {
   title: string;
+  author: string;
+  authorRole: string;
   url: string;
 }
 

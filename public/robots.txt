@@ -30,5 +30,8 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+# Sitemap
+Sitemap: https://miesg.org.my/sitemap.xml
+
 # Block overly aggressive general scrapers if you want, 
 # but allowing the ones above ensures AI chats can search the URL.

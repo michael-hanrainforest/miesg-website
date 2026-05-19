@@ -1,9 +1,15 @@
 import React from 'react';
 import { Mail, Facebook } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
   return (
     <div className="pt-32 pb-24">
+      <SEO 
+        title="Contact Us"
+        description="Connect with the Malaysia Institute of ESG (MiESG). Contact us for institutional inquiries, partnerships, and ESG-related collaboration."
+        url="https://miesg.org.my/contact"
+      />
       <section className="py-24 md:py-32 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="bg-[#1a2e28] rounded-[4rem] shadow-2xl overflow-hidden relative p-12 md:p-24 text-center max-w-5xl mx-auto">

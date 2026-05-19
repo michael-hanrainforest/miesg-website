@@ -17,6 +17,7 @@ import {
 } from 'date-fns';
 import { Link, useNavigate } from 'react-router-dom';
 import { UPCOMING_EVENTS } from '../data/events';
+import SEO from '../components/SEO';
 
 const Events: React.FC = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
@@ -133,6 +134,11 @@ const Events: React.FC = () => {
 
   return (
     <div className="pt-32 pb-24">
+      <SEO 
+        title="Events & Training"
+        description="Join MiESG's events, webinars, and training sessions designed to build ESG capacity and sustainability knowledge."
+        url="https://miesg.org.my/events"
+      />
       <section className="bg-[#1a2e28] text-white py-24 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <img 

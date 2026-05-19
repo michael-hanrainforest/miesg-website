@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Globe, Users, Target, ShieldCheck, Microscope } from 'lucide-react';
 import { TEAM_MEMBERS } from '../constants';
+import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   const location = useLocation();
@@ -22,6 +23,11 @@ const Home: React.FC = () => {
 
   return (
     <div>
+      <SEO 
+        title="Leading ESG Practices in Malaysia" 
+        description="The Malaysia Institute of ESG (MiESG) empowers businesses through consulting, capacity building, and certification to adopt sustainable and globally competitive ESG practices."
+        url="https://miesg.org.my/"
+      />
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 lg:pt-40">
         <div className="absolute inset-0 z-0">

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { PUBLICATIONS, RESEARCH_JOURNALS } from '../constants';
 import { BookOpen, ExternalLink, FileText, Download, Eye, EyeOff } from 'lucide-react';
 import { ResearchJournal } from '../types';
+import SEO from '../components/SEO';
 
 const JournalItem = ({ journal }: { journal: ResearchJournal }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -69,6 +70,11 @@ const JournalItem = ({ journal }: { journal: ResearchJournal }) => {
 const Research: React.FC = () => {
   return (
     <div className="pt-32 pb-24">
+      <SEO 
+        title="Research & Publications"
+        description="Access MiESG's latest publications, technical papers, and academic journals on ESG implementation and sustainable development."
+        url="https://miesg.org.my/research"
+      />
       <section className="bg-[#1a2e28] text-white py-24 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <img 

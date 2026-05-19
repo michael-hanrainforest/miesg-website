@@ -1,9 +1,15 @@
 import React from 'react';
 import { Target, Compass, Leaf } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const About: React.FC = () => {
   return (
     <div className="pt-32 pb-24">
+      <SEO 
+        title="About Us"
+        description="Learn about the Malaysia Institute of ESG (MiESG), an expert institute focused on the practical application of ESG within tourism and key sectors."
+        url="https://miesg.org.my/about"
+      />
       {/* Header */}
       <section className="bg-[#1a2e28] text-white py-24 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">

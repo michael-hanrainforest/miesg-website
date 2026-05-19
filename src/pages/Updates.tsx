@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NEWS_ITEMS } from '../data/news';
+import SEO from '../components/SEO';
 
 const Updates: React.FC = () => {
   return (
     <div className="pt-32 pb-24 bg-slate-50 min-h-screen">
+      <SEO 
+        title="Latest Updates & News"
+        description="Catch up on the newest developments, events, announcements, and milestones from MiESG and our partners."
+        url="https://miesg.org.my/updates"
+      />
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="mb-16">
           <span className="text-green-600 font-black tracking-[0.3em] uppercase text-xs mb-4 block">Organization News</span>

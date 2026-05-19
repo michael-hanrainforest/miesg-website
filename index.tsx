@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Layout from './src/components/Layout';
 import Home from './src/pages/Home';
 import About from './src/pages/About';
@@ -24,23 +25,25 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="services" element={<Services />} />
-          <Route path="research" element={<Research />} />
-          <Route path="events" element={<Events />} />
-          <Route path="events/:id" element={<EventDetails />} />
-          <Route path="updates" element={<Updates />} />
-          <Route path="updates/:id" element={<UpdateDetail />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="leadership/:name" element={<LeadershipProfile />} />
-          <Route path="research/publications/:id" element={<PublicationDetail />} />
-          <Route path="research/publications/:id/order" element={<OrderForm />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="services" element={<Services />} />
+            <Route path="research" element={<Research />} />
+            <Route path="events" element={<Events />} />
+            <Route path="events/:id" element={<EventDetails />} />
+            <Route path="updates" element={<Updates />} />
+            <Route path="updates/:id" element={<UpdateDetail />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="leadership/:name" element={<LeadershipProfile />} />
+            <Route path="research/publications/:id" element={<PublicationDetail />} />
+            <Route path="research/publications/:id/order" element={<OrderForm />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
 );

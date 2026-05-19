@@ -1,10 +1,16 @@
 import React from 'react';
 import { PILLARS } from '../constants';
 import { Layers, ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Services: React.FC = () => {
   return (
     <div className="pt-32 pb-24">
+      <SEO 
+        title="Our Services & Pillars"
+        description="Discover MiESG's four core pillars designed to drive comprehensive ESG integration through consulting, capacity building, standardizing, and advancing tech."
+        url="https://miesg.org.my/services"
+      />
       {/* Header */}
       <section className="bg-[#1a2e28] text-white py-24 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">

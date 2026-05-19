@@ -109,33 +109,6 @@ Closing remarks`
     type: "Event"
   },
   {
-    id: 5,
-    title: "Rimba Park Resort Launching",
-    date: "2026-06-08",
-    time: "Multi-day (June 8 - June 10)",
-    location: "Rimba Park Resort",
-    description: "Launching event for Rimba Park Resort.",
-    type: "Launch"
-  },
-  {
-    id: 6,
-    title: "Rimba Park Resort Launching",
-    date: "2026-06-09",
-    time: "Multi-day (June 8 - June 10)",
-    location: "Rimba Park Resort",
-    description: "Launching event for Rimba Park Resort.",
-    type: "Launch"
-  },
-  {
-    id: 7,
-    title: "Rimba Park Resort Launching",
-    date: "2026-06-10",
-    time: "Multi-day (June 8 - June 10)",
-    location: "Rimba Park Resort",
-    description: "Launching event for Rimba Park Resort.",
-    type: "Launch"
-  },
-  {
     id: 8,
     title: "MiESG Official Meeting",
     date: "2026-07-01",

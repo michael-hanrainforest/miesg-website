@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ArrowRight, Globe, Users, Target, ShieldCheck, Microscope } from 'lucide-react';
+import { ArrowRight, Globe, Users, Target, ShieldCheck, Microscope, Cpu, Leaf, GraduationCap, Building2, LineChart, HeartHandshake, CloudRain, Lightbulb, Sprout, Landmark, Shield, Zap } from 'lucide-react';
 import { TEAM_MEMBERS } from '../constants';
 import SEO from '../components/SEO';
 
@@ -44,13 +44,13 @@ const Home: React.FC = () => {
           <div className="max-w-5xl mx-auto flex flex-col items-center space-y-12">
             
             <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] drop-shadow-2xl">
-              Advancing <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-emerald-400">ESG</span> <br className="hidden md:block" />
-              for Tourism, Hospitality <br className="hidden md:block" />
-              and Destinations
+              Bridging <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-emerald-400">Sustainability</span>, <br className="hidden md:block" />
+              Technology, Governance, <br className="hidden md:block" />
+              and Human Development
             </h1>
 
             <p className="text-white/80 text-lg md:text-2xl font-medium tracking-wide max-w-4xl mx-auto leading-relaxed px-4">
-              MiESG is a specialist institute committed to strengthening environmental, social and governance practice across tourism, hospitality, destination management and community-based development. We connect research, capacity building, advisory support and partnerships to help organisations move from sustainability ambition to practical action.
+              MiESG is a multidisciplinary institute advancing ESG leadership, digital innovation, sustainable development, and responsible governance across industries, communities, and future economies.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-6 pt-6 w-full sm:w-auto">
@@ -73,11 +73,11 @@ const Home: React.FC = () => {
               <div>
                 <span className="text-green-600 font-black tracking-[0.4em] uppercase text-xs mb-4 block text-center lg:text-left">Who We Are</span>
                 <h2 className="text-4xl md:text-6xl font-black text-[#1a2e28] leading-[1.1] tracking-tighter mb-10 text-center lg:text-left">
-                  A Specialist Institute with a Clear Sector Focus
+                  Connecting ESG, Communities, and Digital Innovation
                 </h2>
                 <div className="space-y-8 text-slate-600 text-lg md:text-xl leading-relaxed font-medium text-center lg:text-left">
-                  <p>The Malaysia Institute of ESG (MiESG) is an expert institute focused on the practical application of ESG within tourism and related sectors. The institute was established to respond to the growing need for more sector-specific, people-centred and action-oriented sustainability approaches.</p>
-                  <p>Rather than treating ESG as a generic corporate agenda, MiESG recognises that tourism requires a framework that is sensitive to destinations, communities, culture, biodiversity and long-term resilience.</p>
+                  <p>The Malaysia Institute of ESG (MiESG) sits at the intersection of sustainability transitions, integrated systems thinking, and technological empowerment. We align our focus with emerging ASEAN priorities including ISSB reporting, carbon markets, AI governance, green talent development, and just transition frameworks.</p>
+                  <p>Rather than treating ESG as a generic compliance checklist, MiESG champions transition readiness, digital ESG systems, measurable impact, ethical AI, climate resilience, biodiversity, inclusive development, and practical ESG implementation for SMEs and communities.</p>
                 </div>
               </div>
             </div>
@@ -86,7 +86,7 @@ const Home: React.FC = () => {
                 <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800" className="w-full h-auto aspect-[4/5] object-cover" alt="MiESG Vision" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a2e28]/70 via-transparent to-transparent"></div>
                 <div className="absolute bottom-10 left-10 right-10 p-8 bg-white/10 backdrop-blur-2xl rounded-[2rem] border border-white/20 text-center md:text-left">
-                   <p className="text-white text-2xl font-black mb-1 italic leading-tight">"Driving the regional ESG transition."</p>
+                   <p className="text-white text-2xl font-black mb-1 italic leading-tight">"Advancing ESG leadership across future economies."</p>
                 </div>
               </div>
             </div>
@@ -157,29 +157,49 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-20 max-w-3xl mx-auto">
             <span className="text-green-600 font-black tracking-[0.3em] uppercase text-xs mb-4 block">Focus Areas</span>
-            <h2 className="text-4xl md:text-6xl font-black text-[#1a2e28] mb-8 tracking-tighter leading-none text-center">What We Focus On</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-[#1a2e28] mb-8 tracking-tighter leading-none text-center">Interconnected Domains</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-slate-50 p-12 rounded-[3rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all">
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-green-600 mb-8 shadow-sm"><Globe size={32}/></div>
-              <h3 className="text-2xl font-black text-[#1a2e28] mb-4">Tourism and Hospitality</h3>
-              <p className="text-slate-600 text-lg leading-relaxed">Supporting tourism businesses, hospitality operators and service providers in integrating ESG principles into their strategies, operations and stakeholder engagement.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-xl transition-all group hover:bg-[#1a2e28]">
+              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-green-600 mb-6 shadow-sm group-hover:text-[#1a2e28]"><Globe size={28}/></div>
+              <h3 className="text-xl font-black text-[#1a2e28] group-hover:text-white mb-3 leading-tight">Sustainable Tourism & Hospitality</h3>
+              <p className="text-slate-600 group-hover:text-white/80 text-sm leading-relaxed">Reimagining destination management as a vital component of sustainable economic development.</p>
             </div>
-            <div className="bg-slate-50 p-12 rounded-[3rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all">
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-green-600 mb-8 shadow-sm"><Users size={32}/></div>
-              <h3 className="text-2xl font-black text-[#1a2e28] mb-4">Destinations and Communities</h3>
-              <p className="text-slate-600 text-lg leading-relaxed">Promoting destination development models that strengthen local participation, shared value creation, social inclusion and environmental stewardship.</p>
+            <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-xl transition-all group hover:bg-[#1a2e28]">
+              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-green-600 mb-6 shadow-sm group-hover:text-[#1a2e28]"><ShieldCheck size={28}/></div>
+              <h3 className="text-xl font-black text-[#1a2e28] group-hover:text-white mb-3 leading-tight">ESG & Corporate Governance</h3>
+              <p className="text-slate-600 group-hover:text-white/80 text-sm leading-relaxed">Strengthening institutional accountability, ethical supply chains, and transparent reporting frameworks.</p>
             </div>
-            <div className="bg-slate-50 p-12 rounded-[3rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all">
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-green-600 mb-8 shadow-sm"><Microscope size={32}/></div>
-              <h3 className="text-2xl font-black text-[#1a2e28] mb-4">Research and Capacity Building</h3>
-              <p className="text-slate-600 text-lg leading-relaxed">Generating applied knowledge and delivering training that help institutions and industry players understand, interpret and implement ESG in meaningful ways.</p>
+            <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-xl transition-all group hover:bg-[#1a2e28]">
+              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-green-600 mb-6 shadow-sm group-hover:text-[#1a2e28]"><Building2 size={28}/></div>
+              <h3 className="text-xl font-black text-[#1a2e28] group-hover:text-white mb-3 leading-tight">Smart Cities & Urban Sustainability</h3>
+              <p className="text-slate-600 group-hover:text-white/80 text-sm leading-relaxed">Integrating ESG principles into urban planning, resilient infrastructure, and liveability.</p>
             </div>
-            <div className="bg-slate-50 p-12 rounded-[3rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all">
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-green-600 mb-8 shadow-sm"><Target size={32}/></div>
-              <h3 className="text-2xl font-black text-[#1a2e28] mb-4">Partnerships and Impact</h3>
-              <p className="text-slate-600 text-lg leading-relaxed">Building collaboration with government agencies, industry bodies, academic institutions and community organisations to expand the reach and relevance of ESG practice.</p>
+            <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-xl transition-all group hover:bg-[#1a2e28]">
+              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-green-600 mb-6 shadow-sm group-hover:text-[#1a2e28]"><CloudRain size={28}/></div>
+              <h3 className="text-xl font-black text-[#1a2e28] group-hover:text-white mb-3 leading-tight">Climate Action & Carbon Transition</h3>
+              <p className="text-slate-600 group-hover:text-white/80 text-sm leading-relaxed">Accelerating regional carbon reduction, nature-based solutions, and adaptation strategies.</p>
+            </div>
+            <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-xl transition-all group hover:bg-[#1a2e28]">
+              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-green-600 mb-6 shadow-sm group-hover:text-[#1a2e28]"><Cpu size={28}/></div>
+              <h3 className="text-xl font-black text-[#1a2e28] group-hover:text-white mb-3 leading-tight">AI, Digital Innovation & Analytics</h3>
+              <p className="text-slate-600 group-hover:text-white/80 text-sm leading-relaxed">Leveraging data platforms and emerging tech to measure compliance and drive sustainable efficiency.</p>
+            </div>
+            <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-xl transition-all group hover:bg-[#1a2e28]">
+              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-green-600 mb-6 shadow-sm group-hover:text-[#1a2e28]"><HeartHandshake size={28}/></div>
+              <h3 className="text-xl font-black text-[#1a2e28] group-hover:text-white mb-3 leading-tight">Community & Social Inclusion</h3>
+              <p className="text-slate-600 group-hover:text-white/80 text-sm leading-relaxed">Centring human development, equitable opportunities, and community empowerment in the transition.</p>
+            </div>
+            <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-xl transition-all group hover:bg-[#1a2e28]">
+              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-green-600 mb-6 shadow-sm group-hover:text-[#1a2e28]"><LineChart size={28}/></div>
+              <h3 className="text-xl font-black text-[#1a2e28] group-hover:text-white mb-3 leading-tight">Sustainable Finance & Investment</h3>
+              <p className="text-slate-600 group-hover:text-white/80 text-sm leading-relaxed">Unlocking capital for green initiatives through structured standards and proven ESG impact metrics.</p>
+            </div>
+            <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-xl transition-all group hover:bg-[#1a2e28]">
+              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-green-600 mb-6 shadow-sm group-hover:text-[#1a2e28]"><GraduationCap size={28}/></div>
+              <h3 className="text-xl font-black text-[#1a2e28] group-hover:text-white mb-3 leading-tight">Education & Capacity Building</h3>
+              <p className="text-slate-600 group-hover:text-white/80 text-sm leading-relaxed">Fostering top-tier ESG literacy and pragmatic skills among professionals and policymakers.</p>
             </div>
           </div>
         </div>
@@ -190,32 +210,32 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="w-full lg:w-1/2">
-              <span className="text-green-400 font-black tracking-[0.4em] uppercase text-xs mb-4 block">Why MiESG Matters</span>
-              <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight tracking-tighter">Why ESG Matters in Tourism</h2>
+              <span className="text-green-400 font-black tracking-[0.4em] uppercase text-xs mb-4 block">Strategic Relevance</span>
+              <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight tracking-tighter">Why Integrated ESG Matters</h2>
               <p className="text-white/80 text-xl leading-relaxed mb-8">
-                Tourism is closely tied to environmental quality, community wellbeing and institutional accountability. Poorly managed tourism can weaken destinations, while responsible tourism can create jobs, support conservation, strengthen cultural assets and improve local resilience.
+                In rapidly growing economies, ESG is no longer a siloed compliance exercise. It is a whole-of-economy agenda involving manufacturing, finance, technology, urban systems, energy, governance, education, healthcare, agriculture, and digital transformation.
               </p>
               <p className="text-white/80 text-xl leading-relaxed">
-                MiESG exists to help stakeholders address this balance through practical, evidence-informed and context-sensitive ESG approaches.
+                MiESG bridges these domains, connecting environmental action, community resilience, technological innovation, and institutional accountability into cohesive, actionable frameworks.
               </p>
             </div>
             <div className="w-full lg:w-1/2">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="bg-white/5 border border-white/10 p-8 rounded-[2rem]">
-                  <h4 className="text-xl font-black mb-3">Environmental Quality</h4>
-                  <p className="text-white/60 text-sm leading-relaxed">Protecting natural assets that form the foundation of tourism experiences.</p>
+                  <h4 className="text-xl font-black mb-3">Systemic Resilience</h4>
+                  <p className="text-white/60 text-sm leading-relaxed">Building capacity for industries and communities to adapt to climate and economic shocks.</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 p-8 rounded-[2rem]">
-                  <h4 className="text-xl font-black mb-3">Community Wellbeing</h4>
-                  <p className="text-white/60 text-sm leading-relaxed">Ensuring local populations benefit from and participate in tourism development.</p>
+                  <h4 className="text-xl font-black mb-3">Human-Centric Tech</h4>
+                  <p className="text-white/60 text-sm leading-relaxed">Driving ESG accountability and data integrity through ethical AI and digital systems.</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 p-8 rounded-[2rem]">
-                  <h4 className="text-xl font-black mb-3">Institutional Accountability</h4>
-                  <p className="text-white/60 text-sm leading-relaxed">Fostering transparent governance and ethical business practices.</p>
+                  <h4 className="text-xl font-black mb-3">Robust Governance</h4>
+                  <p className="text-white/60 text-sm leading-relaxed">Fostering transparent policies that align with global standards and local contexts.</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 p-8 rounded-[2rem]">
-                  <h4 className="text-xl font-black mb-3">Local Resilience</h4>
-                  <p className="text-white/60 text-sm leading-relaxed">Building capacity to withstand economic, social and environmental shocks.</p>
+                  <h4 className="text-xl font-black mb-3">Equitable Value</h4>
+                  <p className="text-white/60 text-sm leading-relaxed">Ensuring growth benefits society broadly via inclusive development and capital access.</p>
                 </div>
               </div>
             </div>
@@ -233,12 +253,12 @@ const Home: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
-              "ESG training and executive development",
-              "Applied research and policy support",
-              "Advisory services and implementation guidance",
-              "Partnership development and collaborative initiatives",
-              "Awareness, advocacy and stakeholder engagement",
-              "Certification and validation support through relevant pathways"
+              "Policy & thought leadership platform",
+              "Applied research & advisory centre",
+              "Industry-academia collaboration hub",
+              "Regional ASEAN ESG network",
+              "ESG digital systems implementation",
+              "Transition readiness & capacity building"
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-4 p-8 bg-slate-50 rounded-[2rem] border border-slate-100">
                 <div className="mt-1 w-3 h-3 rounded-full bg-green-500 shrink-0"></div>
@@ -254,9 +274,9 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <span className="text-green-600 font-black tracking-[0.3em] uppercase text-xs mb-4 block">Featured</span>
-            <h2 className="text-4xl md:text-6xl font-black text-[#1a2e28] mb-8 tracking-tighter leading-tight">A Tourism-Centred ESG Platform</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-[#1a2e28] mb-8 tracking-tighter leading-tight">An Interconnected ESG Platform</h2>
             <p className="text-slate-600 text-xl md:text-2xl leading-relaxed mb-12">
-              MiESG brings together sustainability thinking, destination understanding and sector experience. Our work is especially relevant to ecotourism, community-based tourism, educational tourism, responsible hospitality and sustainable destination planning.
+              MiESG leverages its comparative advantage to seamlessly connect ESG with tourism, community development, digital innovation, and sustainability transitions — pioneering collaborative ecosystems across Malaysia and the ASEAN region.
             </p>
           </div>
         </div>
@@ -266,9 +286,9 @@ const Home: React.FC = () => {
       <section className="py-24 md:py-32 bg-[#1a2e28] text-white text-center">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto space-y-10">
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight">Looking to strengthen ESG practice in tourism or destination development?</h2>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight">Ready to strengthen your ESG practice and regional impact?</h2>
             <p className="text-white/80 text-xl leading-relaxed">
-              MiESG welcomes collaboration with institutions, businesses, public agencies and community partners seeking relevant and credible sustainability solutions.
+              MiESG welcomes collaboration with policy makers, corporations, tech partners, and academic institutions seeking resilient and digitally-enabled sustainability solutions.
             </p>
             <div className="pt-8">
               <Link to="/contact" className="inline-block bg-white text-[#1a2e28] px-12 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:bg-green-50 transition-all shadow-2xl transform hover:-translate-y-1">

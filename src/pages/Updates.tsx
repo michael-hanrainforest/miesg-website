@@ -21,12 +21,16 @@ const Updates: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {NEWS_ITEMS.map((item) => (
             <Link key={item.id} to={`/updates/${item.id}`} className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group border border-slate-100 flex flex-col">
-              <div className="h-64 overflow-hidden relative">
-                <img 
-                  src={item.image.includes('view?usp=sharing') ? item.image.replace('file/d/', 'thumbnail?id=').replace('/view?usp=sharing', '&sz=w1000') : item.image}
-                  alt={item.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+              <div className={`h-64 overflow-hidden relative grid ${item.images && item.images.length > 1 ? 'grid-cols-2 gap-0.5 bg-white' : 'grid-cols-1'}`}>
+                {(item.images || [item.image]).slice(0, 2).map((image, index) => (
+                  <div key={image} className="overflow-hidden">
+                    <img
+                      src={image.includes('view?usp=sharing') ? image.replace('file/d/', 'thumbnail?id=').replace('/view?usp=sharing', '&sz=w1000') : image}
+                      alt={index === 0 ? item.title : `${item.title} — programme participants`}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                ))}
               </div>
               <div className="p-8 flex-1 flex flex-col">
                 <span className="text-slate-400 font-bold text-xs uppercase tracking-widest mb-3">

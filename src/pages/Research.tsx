@@ -5,7 +5,7 @@ import { BookOpen, ExternalLink, FileText, Download, Eye, EyeOff } from 'lucide-
 import { ResearchJournal } from '../types';
 import SEO from '../components/SEO';
 
-const JournalItem = ({ journal }: { journal: ResearchJournal }) => {
+const JournalItem = ({ journal }: { journal: ResearchJournal; key?: React.Key }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   // Extract ID from Google Drive URL

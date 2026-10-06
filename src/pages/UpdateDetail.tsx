@@ -49,15 +49,31 @@ const UpdateDetail: React.FC = () => {
           {article.title}
         </h1>
 
-        <div className={`grid overflow-hidden mb-16 rounded-[2.5rem] shadow-xl border border-slate-100 bg-slate-100 ${coverImages.length > 1 ? 'md:grid-cols-2 gap-1' : 'grid-cols-1'}`}>
-          {coverImages.slice(0, 2).map((image, index) => (
-            <img
-              key={image}
-              src={image}
-              alt={index === 0 ? article.title : `${article.title} — programme participants`}
-              className="w-full h-72 md:h-[420px] object-cover"
-            />
-          ))}
+        <div className="mb-16">
+          <div className={`grid overflow-hidden rounded-[2.5rem] shadow-xl border border-slate-100 bg-slate-100 ${coverImages.length > 1 ? 'md:grid-cols-2 gap-1' : 'grid-cols-1'}`}>
+            {coverImages.slice(0, 2).map((image, index) => (
+              <img
+                key={image}
+                src={image}
+                alt={index === 0 ? article.title : `${article.title} — programme participants`}
+                className="w-full h-72 md:h-[420px] object-cover"
+              />
+            ))}
+          </div>
+          {article.imageCredit && (
+            <p className="mt-3 px-2 text-right text-xs font-medium text-slate-400">
+              {article.imageCreditUrl ? (
+                <a
+                  href={article.imageCreditUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-green-600"
+                >
+                  {article.imageCredit}
+                </a>
+              ) : article.imageCredit}
+            </p>
+          )}
         </div>
 
         <div className="prose prose-lg md:prose-xl prose-slate max-w-none font-medium leading-relaxed">

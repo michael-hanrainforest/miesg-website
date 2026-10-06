@@ -6,9 +6,33 @@ export interface NewsItem {
   content: string;
   image: string;
   images?: string[];
+  imageCredit?: string;
+  imageCreditUrl?: string;
 }
 
 export const NEWS_ITEMS: NewsItem[] = [
+  {
+    id: 4,
+    title: "MiESG President Brings Measurable-Impact Focus to Zero Waste Conference in Kuching",
+    date: "2026-10-05",
+    excerpt: "MiESG joined national sustainability leaders at the Zero Waste Management 2.0 Conference 2026, where President Muhammad Sarhan Ismail spoke on moving ESG beyond claims and towards measurable impact.",
+    content: `KUCHING, 5 October 2026 — The Malaysia Institute of ESG (MiESG) participated in the Zero Waste Management 2.0 Conference 2026 in Kuching, with its President, Muhammad Sarhan Ismail, taking the stage as one of the conference speakers.
+
+Held from 5 to 6 October at UCSI Hotel Kuching, the two-day conference brought together policymakers, local authorities, businesses, financial institutions, ESG practitioners, technology providers, educators and community leaders. Under the theme “From Waste to Resource: Building Circular Communities”, participants examined how waste prevention, resource recovery and circular-economy practices can be translated into practical solutions.
+
+Sarhan delivered a session titled “ESG Reality Check: From Sustainability Claims to Measurable Impact”. The subject placed accountability at the centre of the sustainability conversation, highlighting the growing expectation that environmental commitments should be supported by credible implementation and outcomes that can be evaluated.
+
+MiESG's presence reflected the institute's continuing work to advance practical ESG adoption across industries and communities. In the context of a zero-waste transition, that work extends beyond policy statements to the systems, measurements and institutional responsibilities needed to turn sustainability ambitions into lasting change.
+
+Opening the conference, Sarawak Deputy Minister of Energy and Environmental Sustainability Datuk Dr Hazland Abang Hipni outlined four foundations required for meaningful climate mitigation and green transition: regulatory, technical, financial and talent-development frameworks. He stressed that strong laws, verification systems, appropriate technology, viable financing and a skilled workforce would all be necessary to support large-scale sustainability initiatives.
+
+The conference also explored circular approaches to water-treatment residue, community waste separation, nature-based climate adaptation, carbon assessment, bioenergy and digitalisation. Its programme combined policy discussion with implementation workshops, reflecting a shared concern that circular-economy progress must move from isolated projects towards systems that can be adopted and sustained.
+
+Held alongside the Green and Geopark Excellence Awards 2026, the gathering connected zero-waste management with the wider priorities of conservation, responsible tourism, climate action and community participation. For MiESG, the event provided a platform to contribute an essential message to that transition: sustainability leadership must ultimately be demonstrated through measurable, transparent and enduring impact.`,
+    image: "/updates/zero-waste-conference-2026/cover.jpg",
+    imageCredit: "Photo: Mohd Faisal Ahmad/The Borneo Post",
+    imageCreditUrl: "https://www.theborneopost.com/2026/10/06/zero-waste-conference-to-provide-greater-awareness-on-circular-economy-transition-frameworks/"
+  },
   {
     id: 3,
     title: "MiESG Named Strategic Partner as Sustainable Tourism Programme Enters National Spotlight",

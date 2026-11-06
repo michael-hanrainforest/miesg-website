@@ -74,13 +74,13 @@ const PublicationDetail: React.FC = () => {
                     {publication.orderNote}
                   </div>
                 )}
-                <Link 
-                  to={`/research/publications/${publication.id}/order`}
+                <a
+                  href="https://book.miesg.org/#order"
                   className="bg-[#1a2e28] text-white px-12 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:bg-[#2d5a27] transition-all shadow-xl transform hover:-translate-y-1 flex items-center gap-3 group"
                 >
                   <BookOpen size={18} className="group-hover:scale-110 transition-transform" />
                   Order Now
-                </Link>
+                </a>
               </div>
             )}
           </div>
